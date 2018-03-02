@@ -7,7 +7,7 @@ import '../ui/dist/semantic.css'
 
 class Template extends React.Component {
   state = {
-    activeItem: 'main'
+    activeItem: 'main',
   }
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
   render() {
@@ -19,14 +19,14 @@ class Template extends React.Component {
     if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
       rootPath = __PATH_PREFIX__ + `/`
     }
-    
+
     return (
       <div>
         <Container text>
           <Menu pointing secondary>
-            <Link to='/'>
+            <Link to="/">
               <Menu.Item
-                name='main'
+                name="main"
                 active={this.state.activeItem === 'main'}
                 onClick={this.handleItemClick}
               >
@@ -34,7 +34,7 @@ class Template extends React.Component {
               </Menu.Item>
             </Link>
             <Menu.Item
-              name='about'
+              name="about"
               active={activeItem === 'reviews'}
               onClick={this.handleItemClick}
               disabled
@@ -43,7 +43,7 @@ class Template extends React.Component {
             </Menu.Item>
 
             <Menu.Item
-              name='meetups'
+              name="meetups"
               active={activeItem === 'meetups'}
               onClick={this.handleItemClick}
               disabled

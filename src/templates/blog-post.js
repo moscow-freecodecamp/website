@@ -5,7 +5,6 @@ import get from 'lodash/get'
 
 import About from '../components/About'
 
-
 import { Button, Icon, Segment, Header } from 'semantic-ui-react'
 
 class BlogPostTemplate extends React.Component {
@@ -17,10 +16,10 @@ class BlogPostTemplate extends React.Component {
     return (
       <div>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-        <Header as='h1'>
+        <Header as="h1">
           {post.frontmatter.title}
           <Header.Subheader>
-            <Icon name='calendar'/> {post.frontmatter.date}
+            <Icon name="calendar" /> {post.frontmatter.date}
           </Header.Subheader>
         </Header>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -28,22 +27,21 @@ class BlogPostTemplate extends React.Component {
           <About />
         </Segment>
 
-          {previous && (
-            <Link to={previous.fields.slug} rel="prev">
-              <Button icon labelPosition='left' basic>
-                <Icon name='chevron left' /> {previous.frontmatter.title}
-              </Button>
-            </Link>
-          )}
+        {previous && (
+          <Link to={previous.fields.slug} rel="prev">
+            <Button icon labelPosition="left" basic>
+              <Icon name="chevron left" /> {previous.frontmatter.title}
+            </Button>
+          </Link>
+        )}
 
-          {next && (
-              <Link to={next.fields.slug} rel="next">
-                <Button floated='right' labelPosition='right' icon basic>
-                  {next.frontmatter.title} <Icon name='chevron right' /> 
-                </Button>
-              </Link>
-          )}
-
+        {next && (
+          <Link to={next.fields.slug} rel="next">
+            <Button floated="right" labelPosition="right" icon basic>
+              {next.frontmatter.title} <Icon name="chevron right" />
+            </Button>
+          </Link>
+        )}
       </div>
     )
   }

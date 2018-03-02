@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'FreeCodeCamp',
+    title: 'FCC Moscow',
     author: 'w96k',
     description: 'Small Moscow-based community of FreeCodeCamp',
     siteUrl: 'http://moscow-freecodecamp.github.io/website',
@@ -47,5 +47,6 @@ module.exports = {
     `gatsby-plugin-feed`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-less`
   ],
 }
