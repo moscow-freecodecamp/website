@@ -12,16 +12,13 @@ class About extends React.Component {
           <Grid.Row>
             <Grid.Column>
               <Segment basic textAlign='center'>
-                <Link to={'/'}>
-                  <Image centered size='small' src={logo} alt='FCC Moscow Logo' rounded />
-                </Link>
+                <Image centered size='small' src={logo} alt='FCC Moscow Logo' rounded />
                 <Header as='h1'>
-                  FreeCodeCamp Moscow
+                <Link to={'/'}>FreeCodeCamp Moscow</Link>
                   <Header.Subheader>
                     Small Moscow-based community of <a href='http://freecodecamp.com/'>FreeCodeCamp</a>
                   </Header.Subheader>
                 </Header>
-                
               </Segment>
             </Grid.Column>
           </Grid.Row>
