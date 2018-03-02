@@ -6,10 +6,12 @@ import Helmet from 'react-helmet'
 import { Grid, Segment, Button, Header, Icon } from 'semantic-ui-react'
 
 import About from '../components/About'
+import Layout from '../layouts/index'
 
 import favicon from '../../static/favicon.ico'
 
 class BlogIndex extends React.Component {
+
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
