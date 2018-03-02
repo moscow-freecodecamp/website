@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: 'FreeCodeCamp',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    author: 'w96k',
+    description: 'Small Moscow-based community of FreeCodeCamp',
+    siteUrl: 'http://moscow-freecodecamp.github.io/website',
   },
-  pathPrefix: '/gatsby-starter-blog',
+  pathPrefix: '/website',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
