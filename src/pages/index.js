@@ -7,6 +7,8 @@ import { Grid, Segment, Button, Header, Icon } from 'semantic-ui-react'
 
 import About from '../components/About'
 
+import favicon from '../../static/favicon.ico'
+
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
@@ -14,7 +16,10 @@ class BlogIndex extends React.Component {
 
     return (
       <div>
-        <Helmet title={siteTitle} />
+        <Helmet>
+          <title>{siteTitle}</title>
+          <link rel='shortcut icon' type='image/x-icon' href={favicon} />
+        </Helmet>
         <About />
         <Grid>
         {posts.map(({ node }) => {
