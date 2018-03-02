@@ -5,6 +5,8 @@ import get from 'lodash/get'
 
 import About from '../components/About'
 
+import { Button, Icon, Segment } from 'semantic-ui-react'
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -19,26 +21,26 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr/>
-        <About />
+        <Segment secondary>
+          <About />
+        </Segment>
 
-        <ul>
           {previous && (
-            <li>
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            </li>
+            <Link to={previous.fields.slug} rel="prev">
+              <Button icon labelPosition='left' basic>
+                <Icon name='chevron left' /> {previous.frontmatter.title}
+              </Button>
+            </Link>
           )}
 
           {next && (
-            <li>
               <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+                <Button floated='right' labelPosition='right' icon basic>
+                  {next.frontmatter.title} <Icon name='chevron right' /> 
+                </Button>
               </Link>
-            </li>
           )}
-        </ul>
+
       </div>
     )
   }
