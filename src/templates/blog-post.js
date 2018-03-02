@@ -5,7 +5,8 @@ import get from 'lodash/get'
 
 import About from '../components/About'
 
-import { Button, Icon, Segment } from 'semantic-ui-react'
+
+import { Button, Icon, Segment, Header } from 'semantic-ui-react'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -16,10 +17,12 @@ class BlogPostTemplate extends React.Component {
     return (
       <div>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-        <h1>{post.frontmatter.title}</h1>
-        <p>
-          {post.frontmatter.date}
-        </p>
+        <Header as='h1'>
+          {post.frontmatter.title}
+          <Header.Subheader>
+            <Icon name='calendar'/> {post.frontmatter.date}
+          </Header.Subheader>
+        </Header>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <Segment secondary>
           <About />
