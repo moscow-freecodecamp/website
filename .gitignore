@@ -57,3 +57,13 @@ typings/
 # dotenv environment variables file
 .env
 
+# cache
+.cache
+
+# public
+public
+
+# Semantic UI Dist
+src/ui/dist/
+
+.DS_STORE
