@@ -13,7 +13,7 @@ class Template extends React.Component {
     super(props)
     const { location } = props
     this.state = {
-      activeItem: location.pathname,
+      activeItem: withPrefix(location.pathname),
     }
   }
   handleItemClick = (e, { name }) => {
@@ -21,14 +21,8 @@ class Template extends React.Component {
     navigateTo(name)
   }
   render() {
-    const { location, children } = this.props
+    const { children } = this.props
     const { activeItem } = this.state
-    let header
-
-    let rootPath = `/`
-    if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-      rootPath = __PATH_PREFIX__ + `/`
-    }
 
     return (
       <div>
@@ -37,7 +31,7 @@ class Template extends React.Component {
           <Menu pointing secondary>
             <Menu.Item
               name="/"
-              active={this.state.activeItem === '/'}
+              active={activeItem === '/'}
               onClick={this.handleItemClick}
             >
               Главная
@@ -59,6 +53,9 @@ class Template extends React.Component {
             </Menu.Item>
           </Menu>
           {children()}
+          <Segment basic textAlign='center'>
+            Made with ♥ using <a href="https://semantic-ui.com/">Semantic-UI</a> {'&'} <a href="https://www.gatsbyjs.org/">Gatsby</a>
+          </Segment>
         </Container>
       </div>
     )
