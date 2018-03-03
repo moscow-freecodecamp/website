@@ -1,15 +1,25 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import { withPrefix, navigateTo } from 'gatsby-link'
 
 import { Container, Header, Menu, Segment } from 'semantic-ui-react'
+
+import GithubCorner from 'react-github-corner'
 
 import '../ui/dist/semantic.css'
 
 class Template extends React.Component {
-  state = {
-    activeItem: 'main',
+  constructor(props) {
+    super(props)
+    const { location } = props
+    this.state = {
+      activeItem: location.pathname,
+    }
   }
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick = (e, { name }) => {
+    this.setState({ activeItem: name })
+    navigateTo(name)
+  }
   render() {
     const { location, children } = this.props
     const { activeItem } = this.state
@@ -22,31 +32,28 @@ class Template extends React.Component {
 
     return (
       <div>
+        <GithubCorner href="https://github.com/moscow-freecodecamp/website" />
         <Container text>
           <Menu pointing secondary>
-            <Link to="/">
-              <Menu.Item
-                name="main"
-                active={this.state.activeItem === 'main'}
-                onClick={this.handleItemClick}
-              >
-                Главная
-              </Menu.Item>
-            </Link>
             <Menu.Item
-              name="about"
-              active={activeItem === 'reviews'}
+              name="/"
+              active={this.state.activeItem === '/'}
               onClick={this.handleItemClick}
-              disabled
+            >
+              Главная
+            </Menu.Item>
+            <Menu.Item
+              name="/about"
+              active={activeItem === '/about'}
+              onClick={this.handleItemClick}
             >
               О нас
             </Menu.Item>
 
             <Menu.Item
-              name="meetups"
-              active={activeItem === 'meetups'}
+              name="/meetup"
+              active={activeItem === '/meetup'}
               onClick={this.handleItemClick}
-              disabled
             >
               Митапы
             </Menu.Item>
