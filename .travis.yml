@@ -10,6 +10,7 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local-dir: public
+  target-branch: master
   repo: moscow-freecodecamp/moscow-freecodecamp.github.io
   on:
     branch: master
