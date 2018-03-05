@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - "lts/*"
+cache: yarn
 script:
   - "npm run sui:build"
   - "npm run build"
@@ -9,5 +10,6 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local-dir: public
+  repo: moscow-freecodecamp/moscow-freecodecamp.github.io
   on:
     branch: master
