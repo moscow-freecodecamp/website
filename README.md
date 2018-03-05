@@ -7,8 +7,7 @@
 ![David](https://img.shields.io/david/moscow-freecodecamp/website.svg)
 ![David Dev](https://img.shields.io/david/dev/moscow-freecodecamp/website.svg)
 
-
-**Ссылка:** [moscow-freecodecamp/website](http://moscow-freecodecamp.github.io/website/)
+**Ссылка:** [moscow-freecodecamp](http://moscow-freecodecamp.github.io/)
 
 ## Немного о стеке
 
