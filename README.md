@@ -4,7 +4,9 @@
 
 [![Build Status](https://travis-ci.org/moscow-freecodecamp/website.svg?branch=master)](https://travis-ci.org/moscow-freecodecamp/website)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1886fdce2deec4c2caf3/maintainability)](https://codeclimate.com/github/moscow-freecodecamp/website/maintainability)
-![Dependencies](https://david-dm.org/moscow-freecodecamp/website.svg)
+![David](https://img.shields.io/david/moscow-freecodecamp/website.svg)
+![David Dev](https://img.shields.io/david/dev/moscow-freecodecamp/website.svg)
+
 
 **Ссылка:** [moscow-freecodecamp/website](http://moscow-freecodecamp.github.io/website/)
 
