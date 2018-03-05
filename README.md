@@ -10,7 +10,7 @@
 
 **Ссылка:** [moscow-freecodecamp/website](http://moscow-freecodecamp.github.io/website/)
 
-## Немного о стаке
+## Немного о стеке
 
 Cайт использует такие технологии, как Gatsby и Semantic UI.
 
@@ -42,8 +42,10 @@ brew install node
 ```
 
 ## Деплой
+Деплой происходит автоматически в репозиторий [moscow-freecodecamp/moscow-freecodecamp.github.io
+](https://github.com/moscow-freecodecamp/moscow-freecodecamp.github.io) после сборки в [Travis CI](https://travis-ci.org/moscow-freecodecamp/website). Потом данные, загруженные в мастер ветку репозитория становятся доступны по url: https://moscow-freecodecamp.github.io/
 
-Пока еще нету, но будет интеграция с Travis CI и авто-деплоем в ветку gh-pages. Также планируется админка при помощи [Netify-CMS](https://www.netlifycms.org/)
+Также планируется админка при помощи [Netify-CMS](https://www.netlifycms.org/)
 
 ## Как создать пост в блоге?
 
