@@ -10,7 +10,8 @@ const gql = require("graphql-tag");
 const fetch = require("node-fetch");
 const generateContentDigest = require("../utils/contentDigest");
 
-const defaultQuery = gql`
+module.exports = function(options) {
+  const defaultQuery = gql`
   {
     organization(login: "moscow-freecodecamp") {
       name
@@ -29,9 +30,7 @@ const defaultQuery = gql`
       }
     }
   }
-`;
-
-module.exports = function(options) {
+`
   const ghClient = new ApolloClient({
     link: new HttpLink({
       uri: "https://api.github.com/graphql",
