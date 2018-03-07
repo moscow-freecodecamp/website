@@ -12,25 +12,26 @@ const generateContentDigest = require("../utils/contentDigest");
 
 module.exports = function(options) {
   const defaultQuery = gql`
-  {
-    organization(login: "moscow-freecodecamp") {
-      name
-      members(first: 20) {
-        nodes {
-          name
-          avatarUrl
-          email
-          bio
-          isHireable
-          location
-          url
-          websiteUrl
-          id
+    {
+      organization(login: "moscow-freecodecamp") {
+        name
+        members(first: 20) {
+          nodes {
+            name
+            avatarUrl
+            email
+            bio
+            isHireable
+            location
+            url
+            websiteUrl
+            id
+            login
+          }
         }
       }
     }
-  }
-`
+  `;
   const ghClient = new ApolloClient({
     link: new HttpLink({
       uri: "https://api.github.com/graphql",
@@ -60,9 +61,9 @@ module.exports = function(options) {
                 type: `Member`,
                 contentDigest: generateContentDigest(member)
               }
-            }
+            };
             options.createNode(memberNode);
-          })
+          });
 
           resolve();
         } else {
