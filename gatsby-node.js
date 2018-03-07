@@ -2,9 +2,6 @@ const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
-const crypto = require(`crypto`)
-const { ApolloClient } = require('apollo-client')
-const { HttpLink } = require('apollo-link-http')
 const ghFetch = require('./src/actions/github-fetch')
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
