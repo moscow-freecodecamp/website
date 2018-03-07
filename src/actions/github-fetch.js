@@ -48,7 +48,6 @@ module.exports = function(options) {
       .query({ query: options.query ? options.query : defaultQuery })
       .then(response => {
         const members = response.data.organization.members.nodes;
-        // console.log(members)
 
         if (options.createNode && options.createNodeId) {
           members.forEach(member => {
@@ -63,7 +62,6 @@ module.exports = function(options) {
                 contentDigest: generateContentDigest(member)
               }
             }
-            console.log(memberNode)
             options.createNode(memberNode);
           })
 
