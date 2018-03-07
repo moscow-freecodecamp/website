@@ -7,6 +7,7 @@
     "url": "https://github.com/moscow-freecodecamp/website"
   },
   "dependencies": {
+    "dotenv": "^5.0.1",
     "gatsby": "^1.9.218",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-catch-links": "^1.0.19",
@@ -26,12 +27,17 @@
     "gatsby-transformer-remark": "^1.7.33",
     "gatsby-transformer-sharp": "^1.6.21",
     "lodash": "^4.17.5",
+    "node-fetch": "^2.1.1",
     "react-github-corner": "^2.1.0",
     "react-responsive-grid": "^0.3.4",
     "semantic-ui": "^2.3.0",
     "semantic-ui-react": "^0.78.3"
   },
   "devDependencies": {
+    "apollo-cache-inmemory": "^1.1.10",
+    "apollo-client": "^2.2.6",
+    "apollo-link-http": "^1.5.3",
+    "axios": "^0.18.0",
     "eslint": "^4.18.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.9.0",
@@ -40,8 +46,10 @@
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "gh-pages": "^1.1.0",
+    "graphql-tag": "^2.8.0",
     "gulp": "^3.9.1",
-    "prettier": "^1.11.0"
+    "prettier": "^1.11.0",
+    "size-limit": "^0.15.2"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
@@ -63,6 +71,13 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
     "sui:build": "gulp build",
-    "sui:watch": "gulp watch"
-  }
+    "sui:watch": "gulp watch",
+    "size": "size-limit"
+  },
+  "size-limit": [
+    {
+      "path": "src/pages/index.js",
+      "limit": "1000kb"
+    }
+  ]
 }

@@ -2,6 +2,10 @@ const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
+const crypto = require(`crypto`)
+const { ApolloClient } = require('apollo-client')
+const { HttpLink } = require('apollo-link-http')
+const ghFetch = require('./src/actions/github-fetch')
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
@@ -65,4 +69,20 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       value,
     })
   }
+}
+
+/* 
+  Fetching data for 'About us' and 'Meetups' pages
+*/
+
+exports.sourceNodes = ({
+  boundActionCreators: { createNode },
+  createNodeId,
+}) => {
+
+return ghFetch({
+  createNode,
+  createNodeId
+})
+
 }
